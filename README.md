@@ -6,8 +6,8 @@ This software downloads email attachements from your bank containing your bank s
 ## How to Set-up:
 
 1. Install pipenv from pip 
-2. If on windows, start pipenv in directory using command: pipenv shell
-3. To install all packages required use command: pipenv install 
+2. If on windows, start pipenv in directory using command: **pipenv shell**
+3. To install all packages required use command: **pipenv install**
 4. Go [here](https://developers.google.com/gmail/api/quickstart/python) to set up gmail API
 5. Copy credentials.json to file directory
 6. Run "Budget_Program.py"
