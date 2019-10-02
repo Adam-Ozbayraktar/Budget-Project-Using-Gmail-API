@@ -18,7 +18,7 @@ def task():
 
     GetAttachments(service, 'me', messages, download_path)
 
-    password = "Adamozbayr"
+    password = "YOUR_PASSWORD"
     process_files(password, download_path, unencrypted_path, csv_path)
     export_to_database(csv_path)
 
