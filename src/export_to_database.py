@@ -4,6 +4,8 @@ from glob import glob
 import os
 from src.add_tags import add_tags
 import sys
+from pathlib import Path
+
 files_added = 0
 files_already_added = 0
 
@@ -31,8 +33,8 @@ def export_to_database(path):
 
 def export(file):
     """Exports the csv file to a database"""
-    with sqlite3.connect(r"C:\Users\Study\Documents\Budget_project\src\new.db")\
-        as connection:
+    db_file = Path("src/new.db")
+    with sqlite3.connect(db_file) as connection:
 
         c = connection.cursor()
         # Get the count of the tables with the name
@@ -64,8 +66,8 @@ def export(file):
 
 def sort_database():
     """Sorts the database by date in decending order"""
-    with sqlite3.connect(r"C:\Users\Study\Documents\Budget_project\src\new.db")\
-        as connection:
+    db_file = Path("src/new.db")
+    with sqlite3.connect(db_file) as connection:
         c = connection.cursor()
         c.execute("CREATE TABLE Bank_Transactions_curr(date DATE, \
                 name TEXT, card TEXT, amount INT, amount_left FLOAT, \

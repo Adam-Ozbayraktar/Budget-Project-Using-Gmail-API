@@ -6,13 +6,13 @@ import time
 import schedule
 from src.file_processing import process_files
 from src.export_to_database import export_to_database
-
+from pathlib import Path
 def task():
     service = get_credentials()
-
-    download_path = r'C:\Users\Study\Documents\budget_project\cache\downloads'
-    unencrypted_path = r'C:\Users\Study\Documents\budget_project\cache\unencrypted'
-    csv_path = r'C:\Users\Study\Documents\budget_project\cache\csv'
+    cache_folder = Path("cache/")
+    download_path = cache_folder / "downloads"
+    unencrypted_path = cache_folder / "unencrypted"
+    csv_path = cache_folder / "csv"
     query = 'ibsupport@standardbank.co.za'
     messages = ListMessagesMatchingQuery(service, 'me', query)
 

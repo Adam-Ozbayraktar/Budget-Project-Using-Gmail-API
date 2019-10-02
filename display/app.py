@@ -3,8 +3,9 @@ from flask import Flask, render_template, request, session, \
 import sqlite3
 import webbrowser
 from display.get_totals import get_monthly_totals
-
-DATABASE = r'C:\Users\Study\Documents\Budget_project\src\new.db'
+from pathlib import Path
+db_file = Path("src/new.db")
+DATABASE = db_file
 
 app = Flask(__name__)
 

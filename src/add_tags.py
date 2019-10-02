@@ -1,10 +1,10 @@
 import sqlite3
-
+from pathlib import Path
 def add_tags():
     """Adds tags to each transaction in database so that it can be catagorised.
     """
-    with sqlite3.connect(r"C:\Users\Study\Documents\Budget_project\src\new.db")\
-        as connection:
+    src_folder = Path("src/new.db")
+    with sqlite3.connect(src_folder) as connection:
 
         c = connection.cursor()
 

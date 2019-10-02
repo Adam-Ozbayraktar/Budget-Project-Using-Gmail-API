@@ -1,7 +1,7 @@
 import sqlite3
 import datetime
 import calendar
-
+from pathlib import Path
 def calculate_total(Bank_Transactions):
 
     total = 0
@@ -75,7 +75,8 @@ def get_date_intervals(c):
 
 def get_monthly_totals():
 
-    with sqlite3.connect(r"C:\Users\Study\Documents\Budget_project\src\new.db") as connection:
+    db_file = Path("src/new.db")
+    with sqlite3.connect(db_file) as connection:
         c = connection.cursor()
         intervals = get_date_intervals(c)
 
@@ -128,7 +129,7 @@ def get_monthly_totals():
         total = 0
 
     general_intervals = [[intervals[i][j].day for j in range(2)] for i in range(4)]
-    
+
     return months, general_intervals
 
 def main():
