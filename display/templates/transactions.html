@@ -1,0 +1,30 @@
+{% extends "template.html" %}
+{% block content %}
+<div>
+    <div class="tbl-header">
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Card</th>
+                    <th>Amount</th>
+                    <th>Amount Left</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    {% for p in Bank_Transactions %}
+    <table>
+        <tr>
+            <td>{{ p.date }}</td>
+            <td>{{ p.name }}</td>
+            <td>{{ p.card }}</td>
+            <td>{{ p.amount }}</td>
+            <td>R{{ p.amount_left }}</td>
+        </tr>
+    </table>
+</div>
+
+    {% endfor %}
+{% endblock %}

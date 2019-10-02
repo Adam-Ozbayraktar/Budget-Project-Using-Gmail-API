@@ -1,0 +1,262 @@
+{% extends "template.html" %}
+{% block content %}
+
+{% set ns = namespace(takeaway_percentage_total=0, groceries_percentage_total=0, health_shops_percentage_total=0, petrol_percentage_total=0, animal_related_percentage_total=0,  other_percentage_total=0, uncategorized_percentage_total=0) %}
+
+{% set monthly_average = namespace(total=0)%}
+{% for month in months %}
+
+    {% set takeaway_total = 0 %}
+    {% set groceries_total = 0 %}
+    {% set health_shops_total = 0 %}
+    {% set petrol_total = 0 %}
+    {% set animal_related_total = 0 %}
+    {% set other_total = 0 %}
+    {% set uncategorized_total = 0 %}
+<table>
+    <thead>
+        <tr>
+            <th> {{ month.month }}</th>
+            <th>Takeaways</th>
+            <th>Groceries</th>
+            <th>Health Shops</th>
+            <th>Petrol</th>
+            <th>Animal Related</th>
+            <th>Other</th>
+            <th>Uncategorized</th>
+        </tr>
+    </thead>
+
+        <tr>
+            <td>Week 1</td>
+
+            <td>{{ "R{:,.2f}".format(month.week_1.takeaways | float) }}</td>
+            {% set number = month.week_1.takeaways | float %}
+            {% set takeaway_total = takeaway_total + number %}
+
+            <td>{{ "R{:,.2f}".format(month.week_1.groceries | float) }}</td>
+            {% set number = month.week_1.groceries | float %}
+            {% set groceries_total = groceries_total + number %}
+
+            <td>{{ "R{:,.2f}".format(month.week_1.health_shops | float) }}</td>
+            {% set number = month.week_1.health_shops | float %}
+            {% set health_shops_total = health_shops_total + number %}
+
+            <td>{{ "R{:,.2f}".format(month.week_1.petrol | float) }}</td>
+            {% set number = month.week_1.petrol | float %}
+            {% set petrol_total = petrol_total + number %}
+
+            <td>{{ "R{:,.2f}".format(month.week_1.animal_related | float) }}</td>
+            {% set number = month.week_1.animal_related | float %}
+            {% set animal_related_total = animal_related_total + number %}
+
+            <td>{{ "R{:,.2f}".format(month.week_1.other | float) }}</td>
+            {% set number = month.week_1.other | float %}
+            {% set other_total = other_total + number %}
+
+            <td>{{ "R{:,.2f}".format(month.week_1.uncategorized | float) }}</td>
+            {% set number = month.week_1.uncategorized | float %}
+            {% set uncategorized_total = uncategorized_total + number %}
+
+        </tr>
+        <tr>
+            <td>Week 2</td>
+
+            <td>{{ "R{:,.2f}".format(month.week_2.takeaways | float) }}</td>
+            {% set number = month.week_2.takeaways | float %}
+            {% set takeaway_total = takeaway_total + number %}
+
+            <td>{{ "R{:,.2f}".format(month.week_2.groceries | float) }}</td>
+            {% set number = month.week_2.groceries | float %}
+            {% set groceries_total = groceries_total + number %}
+
+            <td>{{ "R{:,.2f}".format(month.week_2.health_shops | float) }}</td>
+            {% set number = month.week_2.health_shops | float %}
+            {% set health_shops_total = health_shops_total + number %}
+
+            <td>{{ "R{:,.2f}".format(month.week_2.petrol | float) }}</td>
+            {% set number = month.week_2.petrol | float %}
+            {% set petrol_total = petrol_total + number %}
+
+            <td>{{ "R{:,.2f}".format(month.week_2.animal_related | float) }}</td>
+            {% set number = month.week_2.animal_related | float %}
+            {% set animal_related_total = animal_related_total + number %}
+
+            <td>{{ "R{:,.2f}".format(month.week_2.other | float) }}</td>
+            {% set number = month.week_2.other | float %}
+            {% set other_total = other_total + number %}
+
+            <td>{{ "R{:,.2f}".format(month.week_2.uncategorized | float) }}</td>
+            {% set number = month.week_2.uncategorized | float %}
+            {% set uncategorized_total = uncategorized_total + number %}
+
+        </tr>
+        <tr>
+            <td>Week 3</td>
+
+            <td>{{ "R{:,.2f}".format(month.week_3.takeaways | float) }}</td>
+            {% set number = month.week_3.takeaways | float %}
+            {% set takeaway_total = takeaway_total + number %}
+
+            <td>{{ "R{:,.2f}".format(month.week_3.groceries | float) }}</td>
+            {% set number = month.week_3.groceries | float %}
+            {% set groceries_total = groceries_total + number %}
+
+            <td>{{ "R{:,.2f}".format(month.week_3.health_shops | float) }}</td>
+            {% set number = month.week_3.health_shops | float %}
+            {% set health_shops_total = health_shops_total + number %}
+
+            <td>{{ "R{:,.2f}".format(month.week_3.petrol | float) }}</td>
+            {% set number = month.week_3.petrol | float %}
+            {% set petrol_total = petrol_total + number %}
+
+            <td>{{ "R{:,.2f}".format(month.week_3.animal_related | float) }}</td>
+            {% set number = month.week_3.animal_related | float %}
+            {% set animal_related_total = animal_related_total + number %}
+
+            <td>{{ "R{:,.2f}".format(month.week_3.other | float) }}</td>
+            {% set number = month.week_3.other | float %}
+            {% set other_total = other_total + number %}
+
+            <td>{{ "R{:,.2f}".format(month.week_3.uncategorized | float) }}</td>
+            {% set number = month.week_3.uncategorized | float %}
+            {% set uncategorized_total = uncategorized_total + number %}
+
+        </tr>
+        <tr>
+            <td>Week 4</td>
+
+            <td>{{ "R{:,.2f}".format(month.week_4.takeaways | float) }}</td>
+            {% set number = month.week_4.takeaways | float %}
+            {% set takeaway_total = takeaway_total + number %}
+
+            <td>{{ "R{:,.2f}".format(month.week_4.groceries | float) }}</td>
+            {% set number = month.week_4.groceries | float %}
+            {% set groceries_total = groceries_total + number %}
+
+            <td>{{ "R{:,.2f}".format(month.week_4.health_shops | float) }}</td>
+            {% set number = month.week_4.health_shops | float %}
+            {% set health_shops_total = health_shops_total + number %}
+
+            <td>{{ "R{:,.2f}".format(month.week_4.petrol | float) }}</td>
+            {% set number = month.week_4.petrol | float %}
+            {% set petrol_total = petrol_total + number %}
+
+            <td>{{ "R{:,.2f}".format(month.week_4.animal_related | float) }}</td>
+            {% set number = month.week_4.animal_related | float %}
+            {% set animal_related_total = animal_related_total + number %}
+
+            <td>{{ "R{:,.2f}".format(month.week_4.other | float) }}</td>
+            {% set number = month.week_4.other | float %}
+            {% set other_total = other_total + number %}
+
+            <td>{{ "R{:,.2f}".format(month.week_4.uncategorized | float) }}</td>
+            {% set number = month.week_4.uncategorized | float %}
+            {% set uncategorized_total = uncategorized_total + number %}
+
+        </tr>
+        <tr style="background-color: rgba(255,255,255,0.3);">
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+            <td>Total</td>
+
+            <td>{{ "R{:,.2f}".format(takeaway_total) }}</td>
+            <td>{{ "R{:,.2f}".format(groceries_total) }}</td>
+            <td>{{ "R{:,.2f}".format(health_shops_total) }}</td>
+            <td>{{ "R{:,.2f}".format(petrol_total) }}</td>
+            <td>{{ "R{:,.2f}".format(animal_related_total) }}</td>
+            <td>{{ "R{:,.2f}".format(other_total) }}</td>
+            <td>{{ "R{:,.2f}".format(uncategorized_total) }}</td>
+
+        </tr>
+        <tr>
+
+            {% set total = takeaway_total + groceries_total + health_shops_total + petrol_total + animal_related_total + other_total + uncategorized_total %}
+
+            <td>Percentage of total</td>
+            {% if total == 0 %}
+                {% set total = 1 %}
+            {% endif %}
+
+            {% set percentage = (takeaway_total/total)*100 %}
+            {% set ns.takeaway_percentage_total = percentage + ns.takeaway_percentage_total %}
+            <td> {{ "{:.2f}%".format(percentage) }} </td>
+
+            {% set percentage = (groceries_total/total)*100 %}
+            {% set ns.groceries_percentage_total = percentage + ns.groceries_percentage_total %}
+            <td> {{ "{:.2f}%".format(percentage) }} </td>
+
+            {% set percentage = (health_shops_total/total)*100 %}
+            {% set ns.health_shops_percentage_total = percentage + ns.health_shops_percentage_total %}
+            <td> {{ "{:.2f}%".format(percentage) }} </td>
+
+            {% set percentage = (petrol_total/total)*100 %}
+            {% set ns.petrol_percentage_total = percentage + ns.petrol_percentage_total %}
+            <td> {{ "{:.2f}%".format(percentage) }} </td>
+
+            {% set percentage = (animal_related_total/total)*100 %}
+            {% set ns.animal_related_percentage_total = percentage + ns.animal_related_percentage_total %}
+            <td> {{ "{:.2f}%".format(percentage) }} </td>
+
+            {% set percentage = (other_total/total)*100 %}
+            {% set ns.other_percentage_total = percentage + ns.other_percentage_total %}
+            <td> {{ "{:.2f}%".format(percentage) }} </td>
+
+            {% set percentage = (uncategorized_total/total)*100 %}
+            {% set ns.uncategorized_percentage_total = percentage + ns.uncategorized_percentage_total%}
+            <td> {{ "{:.2f}%".format(percentage) }} </td>
+
+        {% if loop.index == months|length %}
+            <tr>
+                <td>Average percentage</td>
+                <td>{{ "{:.2f}%".format(ns.takeaway_percentage_total/loop.index) }}</td>
+
+                <td>{{ "{:.2f}%".format(ns.groceries_percentage_total/loop.index) }}</td>
+
+                <td>{{ "{:.2f}%".format(ns.health_shops_percentage_total/loop.index) }}</td>
+
+                <td>{{ "{:.2f}%".format(ns.petrol_percentage_total/loop.index) }}</td>
+
+                <td>{{ "{:.2f}%".format(ns.animal_related_percentage_total/loop.index) }}</td>
+
+                <td>{{ "{:.2f}%".format(ns.other_percentage_total/loop.index) }}</td>
+
+                <td>{{ "{:.2f}%".format(ns.uncategorized_percentage_total/loop.index) }}</td>
+            </tr>
+        {% endif %}
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td style="font-size: 18px;">Monthly Total</td>
+            {% set total = takeaway_total + groceries_total + health_shops_total + petrol_total + animal_related_total + other_total + uncategorized_total %}
+            {% if loop.index != 1 %}
+                {% set monthly_average.total = total + monthly_average.total %}
+            {% endif %}
+            <td style="font-size: 18px;">{{ "R{:,.2f}".format(total) }}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        {% if loop.index == months|length %}
+            <td></td>
+            <td></td>
+            <td></td>
+            <td style="font-size: 18px;">Average Total</td>
+            <td style="font-size: 18px;">{{ "R{:,.2f}".format(monthly_average.total/(loop.index-1)) }}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        {% endif %}
+        <br>
+        <br>
+        <br>
+</table>
+
+{% endfor %}
+
+
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "template.html" %}
+{% block content %}
+    <br>
+    <br>
+    <div class="tbl-header">
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Month</th>
+                    <th>Amount spent in Week 1<br>Between: {{ general_intervals[0][0] }}nd and {{general_intervals[0][1] }}th</th>
+
+                    <th>Amount spent in Week 2<br>Between: {{ general_intervals[1][0] }}th and {{general_intervals[1][1] }}th</th>
+
+                    <th>Amount spent in Week 3<br>Between: {{ general_intervals[2][0] }}th and {{general_intervals[2][1] }}nd</th>
+
+                    <th>Amount spent in Week 4<br>Between: {{ general_intervals[3][0] }}rd and {{general_intervals[3][1] }}st</th>
+
+                    <th>Total Amount Spent for the whole month</th>
+
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    {% for month in months %}
+    <table>
+        <tr>
+            <td>{{ month.month }}</td>
+            <td>R{{ month.week_1.total }}</td>
+            <td>R{{ month.week_2.total }}</td>
+            <td>R{{ month.week_3.total }}</td>
+            <td>R{{ month.week_4.total }}</td>
+            <td>R {{ month.month_total }}</td>
+        </tr>
+    </table>
+
+    {% endfor %}
+{% endblock %}
