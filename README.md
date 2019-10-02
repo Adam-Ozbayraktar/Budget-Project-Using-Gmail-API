@@ -1,7 +1,7 @@
 # Budgeting Software using Gmail API
 
 
-This software downloads email attachements from your bank containing your bank statements, it then parses the pdf document into a csv and the csv is export into a database and is displayed using a combination of Flask, HTML and CSS.
+This software downloads email attachements from your bank containing your bank statements, it then parses the pdf document into a csv and the csv is exported into a database and is displayed using a combination of Flask, HTML and CSS.
 
 ## How to Set-up:
 
